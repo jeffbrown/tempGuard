@@ -32,8 +32,6 @@ class ShiroGuardGrailsPlugin {
         application.guardClasses.each { guardClass ->
             println "\nDEBUG YOO: ${guardClass.propertyName}\t\t${guardClass.clazz}"
             "${guardClass.propertyName}"(guardClass.clazz) { bean ->
-                name = guardClass.name
-                guardClass = guardClass.clazz
                 bean.autowire = "byName"
             }
         }
